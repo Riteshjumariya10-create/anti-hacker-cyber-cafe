@@ -55,3 +55,35 @@ Report Cybercrime
 </footer>
 </body>
 </html>
+
+<section id="cyber-report" style="max-width:600px;margin:30px auto;padding:20px;background:#111827;color:white;border-radius:12px;font-family:Arial,sans-serif;">
+  <h2>Report a Cyber Problem</h2>
+  <p>Use this form to report a cyber-safety concern. Do not submit passwords, OTPs, bank details, or private documents.</p>
+
+  <form action="https://formspree.io/f/mwlvdlzb" method="POST">
+
+
+    <label for="report-name">Name (optional)</label><br>
+    <input id="report-name" name="name" type="text" style="width:100%;padding:10px;margin:8px 0 14px;box-sizing:border-box;">
+
+    <label for="report-email">Email (optional)</label><br>
+    <input id="report-email" name="email" type="email" style="width:100%;padding:10px;margin:8px 0 14px;box-sizing:border-box;">
+
+    <label for="report-type">Type of problem</label><br>
+    <select id="report-type" name="problem_type" required style="width:100%;padding:10px;margin:8px 0 14px;box-sizing:border-box;">
+      <option value="">Choose a category</option>
+      <option>Scam or fraud</option>
+      <option>Suspicious message or link</option>
+      <option>Account security</option>
+      <option>Cyberbullying</option>
+      <option>Other cyber-safety concern</option>
+    </select>
+
+    <label for="report-details">Describe the problem (no passwords or financial details)</label><br>
+    <textarea id="report-details" name="message" required rows="5" style="width:100%;padding:10px;margin:8px 0 14px;box-sizing:border-box;"></textarea>
+
+    <button type="submit" style="padding:12px 18px;background:#22c55e;color:#07111f;border:0;border-radius:8px;font-weight:bold;">Send Report</button>
+  </form>
+
+  <p style="font-size:13px;">This is an independent awareness project, not an official investigation service. For cybercrime in India, visit <a href="https://www.cybercrime.gov.in/" style="color:#93c5fd;">the official cybercrime portal</a>.</p>
+</section>
