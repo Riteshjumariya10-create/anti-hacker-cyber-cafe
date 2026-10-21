@@ -2,88 +2,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anti Hacker Cyber Cafe</title>
-<style>
-body {
-  background: #071525;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
-}
-h1 { color: #55e6d0; }
-section {
-  background: #142b42;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 15px;
-  max-width: 600px;
-}
-a { color: #55e6d0; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Anti Hacker Cyber Cafe is an independent cyber-safety awareness project.">
+  <title>Anti Hacker Cyber Cafe | Cyber Safety</title>
+  <style>
+    :root {
+      --bg: #050908;
+      --panel: #0d1712;
+      --green: #39ff78;
+      --text: #eefbf1;
+      --muted: #b0c4b7;
+      --border: #1e7540;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: var(--green); }
+    .wrap { width: min(1080px, 92%); margin: auto; }
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      background: #070d09;
+    }
+    .brand {
+      color: var(--green);
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 1.15rem;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
+    nav a { text-decoration: none; font-size: .95rem; }
+    .hero { padding: 64px 0 42px; }
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .8rem;
+      font-weight: bold;
+    }
+    h1 { font-size: clamp(2.5rem, 8vw, 4.8rem); line-height: 1.05; margin: 12px 0; }
+    h1 span, h2 span { color: var(--green); }
+    .muted { color: var(--muted); }
+    .button {
+      display: inline-block;
+      margin: 8px 8px 0 0;
+      padding: 10px 16px;
+      border: 1px solid var(--green);
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .primary { background: var(--green); color: #041008; }
+    section { padding: 28px 0; scroll-margin-top: 16px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--panel);
+    }
+    .card h3 { color: var(--green); margin-top: 0; }
+    .report input, .report select, .report textarea {
+      display: block;
+      width: 100%;
+      margin: 7px 0 16px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #07100a;
+      color: var(--text);
+      font: inherit;
+    }
+    .report button {
+      padding: 12px 18px;
+      background: var(--green);
+      color: #041008;
+      border: 0;
+      border-radius: 7px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer { margin-top: 32px; padding: 24px 0; border-top: 1px solid var(--border); }
+    @media (max-width: 480px) {
+      .hero { padding-top: 42px; }
+      nav { gap: 12px; }
+    }
+  </style>
 </head>
 <body>
-<h1>🛡️ Anti Hacker Cyber Cafe</h1>
-<p>Making the internet safer for everyone.</p>
+<header>
+  <div class="wrap">
+    <div class="brand">ANTI HACKER CYBER CAFE</div>
+    <div class="muted">Learn smart. Stay alert. Be cyber-safe.</div>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#safety">Cyber Safety</a>
+      <a href="#guides">Guides</a>
+      <a href="#founder">Founder</a>
+      <a href="#cyber-report">Report a Problem</a>
+    </nav>
+  </div>
+</header>
 
-<section>
-<h2>Our Mission</h2>
-<p>We help people learn about online safety,
-spam prevention, and responsible reporting.</p>
-</section>
+<main class="wrap">
+  <section class="hero" id="home">
+    <div class="eyebrow">Independent Cyber-Safety Community</div>
+    <h1>ANTI HACKER<br><span>CYBER CAFE</span></h1>
+    <p class="muted">
+      A community-driven project for cybersecurity awareness,
+      safer browsing, and smarter decisions online.
+    </p>
+    <a class="button primary" href="#safety">Explore the Platform</a>
+    <a class="button" href="#cyber-report">Report a Problem</a>
+  </section>
 
-<section>
-<h2>Report Cybercrime</h2>
-<p>Use India's official reporting website:</p>
-<a href="https://www.cybercrime.gov.in/">
-Report Cybercrime
-</a>
-</section>
+  <section id="safety">
+    <h2>Explore <span>Cyber Safety</span></h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Scam Awareness</h3>
+        <p>Learn to recognize suspicious messages, phishing attempts, and online impersonation.</p>
+      </article>
+      <article class="card" id="guides">
+        <h3>Security Guides</h3>
+        <p>Explore strong passwords, two-factor authentication, privacy settings, and safe browsing.</p>
+      </article>
+      <article class="card">
+        <h3>Think Before You Click</h3>
+        <p>Check unfamiliar links and verify unexpected requests before sharing information.</p>
+      </article>
+    </div>
+  </section>
 
-<section>
-<h2>Stay Safe Online</h2>
-<p>Never share your passwords or OTPs.</p>
-<p>Use strong passwords and two-factor authentication.</p>
-<p>Never hack back or threaten anyone.</p>
-</section>
+  <section id="founder">
+    <div class="card">
+      <div class="eyebrow">Meet the Creator</div>
+      <h2>Founder &amp; <span>Creator</span></h2>
+      <p>
+        I created Anti Hacker Cyber Cafe to help people learn about
+        cybersecurity, recognize digital threats, and build safer
+        online habits.
+      </p>
+      <p class="muted">
+        This is an independent awareness project, not a government
+        agency or an official cybercrime investigation service.
+      </p>
+    </div>
+  </section>
+
+  <section id="cyber-report">
+    <h2>Report a <span>Cyber Problem</span></h2>
+    <p class="muted">
+      Share a cyber-safety concern. Do not include passwords, OTPs,
+      bank details, private documents, or other sensitive information.
+    </p>
+    <div class="card report">
+      <form action="https://formspree.io/f/mwlvdlzb" method="POST">
+        <label for="report-name">Name (optional)</label>
+        <input id="report-name" name="name" type="text">
+
+        <label for="report-email">Email (optional)</label>
+        <input id="report-email" name="email" type="email">
+
+        <label for="report-type">Type of problem</label>
+        <select id="report-type" name="problem_type" required>
+          <option value="">Choose a category</option>
+          <option>Scam or fraud</option>
+          <option>Suspicious message or link</option>
+          <option>Account security</option>
+          <option>Cyberbullying</option>
+          <option>Other cyber-safety concern</option>
+        </select>
+
+        <label for="report-message">Describe the concern</label>
+        <textarea id="report-message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit Report</button>
+      </form>
+    </div>
+    <p class="muted">
+      Reports go through a third-party form service to the configured
+      recipient; they are not automatically sent to government authorities.
+      Do not use this form for emergencies.
+    </p>
+  </section>
+
+  <section id="official-resources">
+    <h2>Official <span>Safety Resource</span></h2>
+    <p class="muted">
+      For official cybercrime reporting in India, visit the
+      <a href="https://www.cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">
+        National Cyber Crime Reporting Portal
+      </a>.
+      For urgent financial cyber fraud in India, call 1930.
+    </p>
+  </section>
+</main>
 
 <footer>
-<p>Independent cyber-safety awareness initiative.</p>
-<p>This website does not collect reports.</p>
+  <div class="wrap">
+    <div class="brand">ANTI HACKER CYBER CAFE</div>
+    <p class="muted">
+      An independent cyber-safety awareness project by its Founder &amp; Creator.
+      Not affiliated with any government agency or police department.
+    </p>
+    <a href="#home">Back to top</a>
+  </div>
 </footer>
 </body>
 </html>
-
-<section id="cyber-report" style="max-width:600px;margin:30px auto;padding:20px;background:#111827;color:white;border-radius:12px;font-family:Arial,sans-serif;">
-  <h2>Report a Cyber Problem</h2>
-  <p>Use this form to report a cyber-safety concern. Do not submit passwords, OTPs, bank details, or private documents.</p>
-
-  <form action="https://formspree.io/f/mwlvdlzb" method="POST">
-
-
-    <label for="report-name">Name (optional)</label><br>
-    <input id="report-name" name="name" type="text" style="width:100%;padding:10px;margin:8px 0 14px;box-sizing:border-box;">
-
-    <label for="report-email">Email (optional)</label><br>
-    <input id="report-email" name="email" type="email" style="width:100%;padding:10px;margin:8px 0 14px;box-sizing:border-box;">
-
-    <label for="report-type">Type of problem</label><br>
-    <select id="report-type" name="problem_type" required style="width:100%;padding:10px;margin:8px 0 14px;box-sizing:border-box;">
-      <option value="">Choose a category</option>
-      <option>Scam or fraud</option>
-      <option>Suspicious message or link</option>
-      <option>Account security</option>
-      <option>Cyberbullying</option>
-      <option>Other cyber-safety concern</option>
-    </select>
-
-    <label for="report-details">Describe the problem (no passwords or financial details)</label><br>
-    <textarea id="report-details" name="message" required rows="5" style="width:100%;padding:10px;margin:8px 0 14px;box-sizing:border-box;"></textarea>
-
-    <button type="submit" style="padding:12px 18px;background:#22c55e;color:#07111f;border:0;border-radius:8px;font-weight:bold;">Send Report</button>
-  </form>
-
-  <p style="font-size:13px;">This is an independent awareness project, not an official investigation service. For cybercrime in India, visit <a href="https://www.cybercrime.gov.in/" style="color:#93c5fd;">the official cybercrime portal</a>.</p>
-</section>
