@@ -1,240 +1,555 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Anti Hacker Cyber Cafe is an independent cyber-safety awareness project.">
-  <title>Anti Hacker Cyber Cafe | Cyber Safety</title>
-   @media (max-width: 480px) {
-    .hero { padding-top: 42px; }
-    nav { gap: 12px; }
-  }
+  <meta name="description" content="Anti Hacker Cyber Cafe is an independent cyber-safety awareness platform.">
+  <meta name="theme-color" content="#050908">
 
-  .creator-name {
-    color: var(--green);
-    font-size: 1.2rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    overflow-wrap: anywhere;
-    text-shadow: 0 0 8px var(--green);
-  }
- <style>
+  <title>Anti Hacker Cyber Cafe | Cyber Safety</title>
+
+  <style>
     :root {
       --bg: #050908;
       --panel: #0d1712;
       --green: #39ff78;
-      --text: #eefbf1;
-      --muted: #b0c4b7;
-      --border: #1e7540;
+      --text: #e7f5eb;
+      --muted: #a4b8aa;
+      --border: #1e5935;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
       background: var(--bg);
       color: var(--text);
-      font-family: Arial, sans-serif;
-      line-height: 1.65;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
     }
-    a { color: var(--green); }
-    .wrap { width: min(1080px, 92%); margin: auto; }
+
+    a {
+      color: var(--green);
+      overflow-wrap: anywhere;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
     header {
-      padding: 20px 0;
       border-bottom: 1px solid var(--border);
-      background: #070d09;
+      background: #080e0b;
     }
-    .brand {
-      color: var(--green);
-      font-weight: 900;
-      letter-spacing: 2px;
-      font-size: 1.15rem;
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 16px 0;
     }
-    nav { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 12px; }
-    nav a { text-decoration: none; font-size: .95rem; }
-    .hero { padding: 64px 0 42px; }
-    .eyebrow {
+
+    .logo {
       color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: .8rem;
+      font-size: 1.25rem;
       font-weight: bold;
+      text-decoration: none;
     }
-    h1 { font-size: clamp(2.5rem, 8vw, 4.8rem); line-height: 1.05; margin: 12px 0; }
-    h1 span, h2 span { color: var(--green); }
-    .muted { color: var(--muted); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .hero {
+      padding: 85px 0 75px;
+      text-align: center;
+      background: radial-gradient(
+        ellipse at top,
+        rgba(57, 255, 120, 0.12),
+        transparent 65%
+      );
+    }
+
+    .tag {
+      display: inline-block;
+      color: var(--green);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+    }
+
+    h1 {
+      color: var(--green);
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      overflow-wrap: anywhere;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
     .button {
       display: inline-block;
-      margin: 8px 8px 0 0;
-      padding: 10px 16px;
-      border: 1px solid var(--green);
-      border-radius: 7px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .primary { background: var(--green); color: #041008; }
-    section { padding: 28px 0; scroll-margin-top: 16px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .card {
-      padding: 20px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      background: var(--panel);
-    }
-    .card h3 { color: var(--green); margin-top: 0; }
-    .report input, .report select, .report textarea {
-      display: block;
-      width: 100%;
-      margin: 7px 0 16px;
-      padding: 12px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      background: #07100a;
-      color: var(--text);
-      font: inherit;
-    }
-    .report button {
-      padding: 12px 18px;
       background: var(--green);
       color: #041008;
-      border: 0;
+      padding: 12px 22px;
       border-radius: 7px;
       font-weight: bold;
+      text-decoration: none;
+      margin: 5px;
+    }
+
+    .button:hover {
+      background: #a2ffba;
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--green);
+    }
+
+    section {
+      padding: 55px 0;
+      scroll-margin-top: 20px;
+    }
+
+    .section-title {
+      color: var(--green);
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      min-width: 0;
+    }
+
+    .card h3 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    .founder {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+      border: 1px solid var(--green);
+      box-shadow: 0 0 22px rgba(57, 255, 120, 0.07);
+    }
+
+    .founder-label {
+      display: inline-block;
+      border: 1px solid var(--border);
+      color: var(--green);
+      border-radius: 30px;
+      padding: 5px 14px;
+      margin-bottom: 15px;
+    }
+
+    .founder h3 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      overflow-wrap: anywhere;
+    }
+
+    .notice {
+      background: #101b14;
+      border-left: 4px solid var(--green);
+      padding: 18px;
+      margin-top: 25px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .notice strong {
+      color: var(--green);
+    }
+
+    form {
+      max-width: 700px;
+      margin: auto;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    label {
+      display: block;
+      margin: 14px 0 6px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea,
+    select {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #050b07;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 20px;
+      background: var(--green);
+      color: #041008;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
     }
-    footer { margin-top: 32px; padding: 24px 0; border-top: 1px solid var(--border); }
-    @media (max-width: 480px) {
-      .hero { padding-top: 42px; }
-      nav { gap: 12px; }
+
+    .submit-button:hover {
+      background: #a2ffba;
+    }
+
+    .small-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      background: #080e0b;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    footer strong {
+      color: var(--green);
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        justify-content: center;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      form {
+        padding: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
     }
   </style>
 </head>
+
 <body>
-<header>
-  <div class="wrap">
-    <div class="brand">ANTI HACKER CYBER CAFE</div>
-    <div class="muted">Learn smart. Stay alert. Be cyber-safe.</div>
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#safety">Cyber Safety</a>
-      <a href="#guides">Guides</a>
-      <a href="#founder">Founder</a>
-      <a href="#cyber-report">Report a Problem</a>
-    </nav>
-  </div>
-</header>
 
-<main class="wrap">
-  <section class="hero" id="home">
-    <div class="eyebrow">Independent Cyber-Safety Community</div>
-    <h1>ANTI HACKER<br><span>CYBER CAFE</span></h1>
-    <p class="muted">
-      A community-driven project for cybersecurity awareness,
-      safer browsing, and smarter decisions online.
-    </p>
-    <a class="button primary" href="#safety">Explore the Platform</a>
-    <a class="button" href="#cyber-report">Report a Problem</a>
-  </section>
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="logo" href="#home">ANTI HACKER CAFE</a>
 
-  <section id="safety">
-    <h2>Explore <span>Cyber Safety</span></h2>
-    <div class="grid">
-      <article class="card">
-        <h3>Scam Awareness</h3>
-        <p>Learn to recognize suspicious messages, phishing attempts, and online impersonation.</p>
-      </article>
-      <article class="card" id="guides">
-        <h3>Security Guides</h3>
-        <p>Explore strong passwords, two-factor authentication, privacy settings, and safe browsing.</p>
-      </article>
-      <article class="card">
-        <h3>Think Before You Click</h3>
-        <p>Check unfamiliar links and verify unexpected requests before sharing information.</p>
-      </article>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#safety">Cyber Safety</a>
+          <a href="#founder">Founder</a>
+          <a href="#report">Report</a>
+          <a href="#resources">Resources</a>
+        </div>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="founder">
-    <div class="card">
-      <div class="eyebrow">Meet the Creator</div>
-      <h2>Founder &amp; <span>Creator</span></h2>
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="tag">CYBER SAFETY AWARENESS</span>
+
+        <h1>Anti Hacker Cyber Cafe</h1>
+
+        <p>
+          Explore the digital world with awareness.
+          Learn to recognize spam, suspicious messages,
+          online scams and common cybersecurity risks.
+          Knowledge is your first line of digital defence.
+        </p>
+
+        <a class="button" href="#safety">Explore Cyber Safety</a>
+        <a class="button button-outline" href="#report">Submit a Report</a>
+      </div>
+    </section>
+
+    <section id="safety">
+      <div class="container">
+        <h2 class="section-title">Stay Alert. Stay Secure.</h2>
+
+        <p class="section-intro">
+          Simple habits can help you protect your accounts,
+          personal information and online experience.
+        </p>
+
+        <div class="grid">
+
+          <article class="card">
+            <h3>01. Identify Spam</h3>
+            <p>
+              Watch for repeated unwanted messages, misleading
+              offers, suspicious links and unexpected attachments.
+              Avoid interacting with messages you do not trust.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>02. Protect Your Accounts</h3>
+            <p>
+              Use strong, unique passwords and two-factor
+              authentication where available. Never share
+              passwords or verification codes with strangers.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>03. Recognize Scams</h3>
+            <p>
+              Be careful with urgent payment requests, fake prizes,
+              impersonation attempts and offers that seem too good
+              to be true. Verify claims through official channels.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="founder">
+      <div class="container">
+        <h2 class="section-title">Meet the Creator</h2>
+
+        <p class="section-intro">
+          An independent project built to promote
+          responsible and safer internet use.
+        </p>
+
+        <div class="card founder">
+          <span class="founder-label">FOUNDER &amp; CREATOR</span>
+
+          <h3>PROGAMEROFFICIAL_ON</h3>
+
+          <p>
+            Founder and creator of Anti Hacker Cyber Cafe,
+            an independent cyber-safety awareness project
+            dedicated to helping people learn about online
+            risks and make safer digital decisions.
+          </p>
+
+          <div class="notice">
+            <strong>Our Mission:</strong>
+            Promote cyber awareness, responsible internet use
+            and better protection against spam and online scams.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="report">
+      <div class="container">
+        <h2 class="section-title">Submit a Cyber-Safety Report</h2>
+
+        <p class="section-intro">
+          Share information about spam, suspicious messages
+          or a cyber-safety concern. Do not include passwords,
+          OTPs or other secret credentials.
+        </p>
+
+        <form action="https://formspree.io/f/mwlvdlzb" method="POST">
+
+          <label for="name">Your Name (Optional)</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            maxlength="100"
+            placeholder="Enter your name"
+          >
+
+          <label for="email">Email (Optional)</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            maxlength="254"
+            placeholder="Enter your email"
+          >
+
+          <label for="category">Type of Concern</label>
+          <select id="category" name="category" required>
+            <option value="">Choose a category</option>
+            <option value="Spam">Spam messages</option>
+            <option value="Suspicious Link">Suspicious link</option>
+            <option value="Possible Scam">Possible online scam</option>
+            <option value="Impersonation">Impersonation</option>
+            <option value="Other">Other cyber-safety concern</option>
+          </select>
+
+          <label for="message">Describe the Concern</label>
+          <textarea
+            id="message"
+            name="message"
+            required
+            maxlength="5000"
+            placeholder="Describe what happened. Do not include passwords, OTPs or sensitive personal information."
+          ></textarea>
+
+          <button class="submit-button" type="submit">
+            Submit Report
+          </button>
+
+          <p class="small-text">
+            This independent website is not an official government
+            reporting service. Submissions are handled through
+            Formspree. Do not use this form for emergencies.
+          </p>
+
+        </form>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <h2 class="section-title">Official Cybercrime Resource</h2>
+
+        <p class="section-intro">
+          For reporting cybercrime in India, use the official
+          government portal rather than relying only on this
+          awareness website.
+        </p>
+
+        <div class="card" style="text-align: center;">
+          <h3>National Cyber Crime Reporting Portal</h3>
+
+          <p>
+            Visit the Government of India's official portal
+            for cybercrime reporting and related information.
+          </p>
+
+          <p style="margin-top: 18px;">
+            <a
+              class="button"
+              href="https://www.cybercrime.gov.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit Official Portal
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>Anti Hacker Cyber Cafe</strong></p>
+
       <p>
-        I created Anti Hacker Cyber Cafe to help people learn about
-        cybersecurity, recognize digital threats, and build safer
-        online habits.
+        An independent cyber-safety awareness project
+        created by PROGAMEROFFICIAL_ON.
       </p>
-      
-<p class="creator-name">PROGAMEROFFICIAL_ON</p>
 
-      <p class="muted">
-        This is an independent awareness project, not a government
-        agency or an official cybercrime investigation service.
-      </p>
+      <p>&copy; 2026 Anti Hacker Cyber Cafe.</p>
+
+      <p>Stay aware. Think before you click.</p>
     </div>
-  </section>
+  </footer>
 
-  <section id="cyber-report">
-    <h2>Report a <span>Cyber Problem</span></h2>
-    <p class="muted">
-      Share a cyber-safety concern. Do not include passwords, OTPs,
-      bank details, private documents, or other sensitive information.
-    </p>
-    <div class="card report">
-      <form action="https://formspree.io/f/mwlvdlzb" method="POST">
-        <label for="report-name">Name (optional)</label>
-        <input id="report-name" name="name" type="text">
-
-        <label for="report-email">Email (optional)</label>
-        <input id="report-email" name="email" type="email">
-
-        <label for="report-type">Type of problem</label>
-        <select id="report-type" name="problem_type" required>
-          <option value="">Choose a category</option>
-          <option>Scam or fraud</option>
-          <option>Suspicious message or link</option>
-          <option>Account security</option>
-          <option>Cyberbullying</option>
-          <option>Other cyber-safety concern</option>
-        </select>
-
-        <label for="report-message">Describe the concern</label>
-        <textarea id="report-message" name="message" rows="5" required></textarea>
-
-        <button type="submit">Submit Report</button>
-      </form>
-    </div>
-    <p class="muted">
-      Reports go through a third-party form service to the configured
-      recipient; they are not automatically sent to government authorities.
-      Do not use this form for emergencies.
-    </p>
-  </section>
-
-  <section id="official-resources">
-    <h2>Official <span>Safety Resource</span></h2>
-    <p class="muted">
-      For official cybercrime reporting in India, visit the
-      <a href="https://www.cybercrime.gov.in/" target="_blank" rel="noopener noreferrer">
-        National Cyber Crime Reporting Portal
-      </a>.
-      For urgent financial cyber fraud in India, call 1930.
-    </p>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="brand">ANTI HACKER CYBER CAFE</div>
-    <p class="muted">
-      An independent cyber-safety awareness project by its Founder &amp; Creator.
-      Not affiliated with any government agency or police department.
-    </p>
-    <a href="#home">Back to top</a>
-  </div>
-</footer>
 </body>
 </html>
